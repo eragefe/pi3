@@ -78,7 +78,7 @@ def upnp():
     os.system('killall squeezelite')
     os.system('rm /ro/etc/init.d/squeezelite')
     os.system('cp /ro/root/templates/app_up.html /ro/root/templates/app.html')
-	os.system('mount -o remount ro /ro')
+    os.system('mount -o remount ro /ro')
     return render_template('app.html')
 
 ######## FUNCTIONS ##########
@@ -112,8 +112,8 @@ def create_wpa_supplicant(ssid, wifi_key):
         temp_conf_file.write('	psk="' + wifi_key + '"\n')
     temp_conf_file.write('	}')
     temp_conf_file.close
-	os.system('mount -o remount rw /ro')
-	os.system('mv wpa_supplicant.conf.tmp /ro/etc/wpa_supplicant/wpa_supplicant.conf')
+    os.system('mount -o remount rw /ro')
+    os.system('mv wpa_supplicant.conf.tmp /ro/etc/wpa_supplicant/wpa_supplicant.conf')
 
 def create_upmpdcli(ssid, wifi_key):
 
@@ -127,7 +127,7 @@ def create_upmpdcli(ssid, wifi_key):
     temp_conf_file.write('tidalpass = ' + wifi_key + '\n')
     temp_conf_file.write('tidalquality = lossless\n')
     temp_conf_file.close
-	os.system('mount -o remount rw /ro')
+    os.system('mount -o remount rw /ro')
     os.system('mv upmpdcli.tmp /ro/etc/upmpdcli.conf')
 
 if __name__ == '__main__':
