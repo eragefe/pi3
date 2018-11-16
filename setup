@@ -6,7 +6,7 @@ cp upmpdcli.list /etc/apt/sources.list.d
 cp gdis.dtbo /boot/overlays
 
 apt-get update
-apt-get install dirmngr
+apt-get install dirmngr -y
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
 apt-get update
 apt-get install python3 python3-pip python3-setuptools mpd mpc upmpdcli upmpdcli-tidal squeezelite git-core autoconf make libtool libfftw3-dev libasound2-dev build-essential git-core autoconf make libtool libi2c-dev i2c-tools lm-sensors libcurl4-openssl-dev libmpdclient-dev libjsoncpp-dev -y --allow-unauthenticated
