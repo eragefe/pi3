@@ -49,12 +49,12 @@
 #
 #  To install software, run upgrades and do other changes to the raspberry setup, simply remove the init= 
 #  entry from the cmdline.txt file and reboot, make the changes, add the init= entry and reboot once more. 
-
+ 
 fail(){
 	echo -e "$1"
 	/bin/bash
 }
-
+ 
 # load module
 modprobe overlay
 if [ $? -ne 0 ]; then
