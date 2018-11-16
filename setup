@@ -15,13 +15,9 @@ mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 mv /etc/init.d/squeezelite /etc/squeezelite
 cp squeezelite /etc/default/squeezelite
-cp overlayRoot.sh /usr/local/sbin/overlayRoot.sh
-chmod +x /usr/local/sbin/overlayRoot.sh
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
-
-sed -i '$ i init=/usr/local/sbin/overlayRoot.sh' /boot/cmdline.txt
 
 sed -i '/dtparam=audio=on/d' /boot/config.txt
 sed -i '$ i dtoverlay=gdis' /boot/config.txt
