@@ -3,8 +3,6 @@
 
 timedatectl set-timezone Europe/Stockholm
 cp gdis.dtbo /boot/overlays
-mkdir /ro
-sed -i '$ a PARTUUID=f8bf8875-02  /ro               ext4    ro,noatime  0       1' /etc/fstab
 
 apt-get update
 apt-get install dirmngr -y
