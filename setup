@@ -4,6 +4,8 @@
 timedatectl set-timezone Europe/Stockholm
 cp upmpdcli.list /etc/apt/sources.list.d
 cp gdis.dtbo /boot/overlays
+mkdir /ro
+sed -i '$ a PARTUUID=f8bf8875-02  /ro               ext4    ro,noatime  0       1' /etc/fstab
 
 apt-get update
 apt-get install dirmngr -y
@@ -18,6 +20,7 @@ cp squeezelite /etc/default/squeezelite
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
+echo overlay >>/etc/initramfs-tools/modules
 
 sed -i '/dtparam=audio=on/d' /boot/config.txt
 sed -i '$ i dtoverlay=gdis' /boot/config.txt
@@ -54,5 +57,19 @@ git clone https://github.com/antiprism/mpd_oled
 cd mpd_oled
 PLAYER=MPD make
 cp mpd_oled /usr/local/bin
+
+mkdir /ro
+sed -i '$ a PARTUUID=f8bf8875-02  /ro               ext4    ro,noatime  0       1' /etc/fstab
+echo overlay >>/etc/initramfs-tools/modules
+cp overlay /etc/initramfs-tools/scripts
+update-initramfs -c -k
+sed -i '$ a kernel=kernel7.img' /boot/config.txt
+sed -i '$ a initramfs initrd.img' /boot/config.txt
+sed 's/^/boot=overlay /' /boot/cmdline.txt
+
+echo ##############################################
+echo REBOOT
+echo ##############################################
+sleep 2
 
 reboot
