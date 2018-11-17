@@ -18,7 +18,6 @@ cp squeezelite /etc/default/squeezelite
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
-echo overlay >>/etc/initramfs-tools/modules
 
 sed -i '/dtparam=audio=on/d' /boot/config.txt
 sed -i '$ i dtoverlay=gdis' /boot/config.txt
