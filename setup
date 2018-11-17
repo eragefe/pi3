@@ -56,7 +56,7 @@ PLAYER=MPD make
 cp mpd_oled /usr/local/bin
 
 mkdir /ro
-sed -i '$ a PARTUUID=f8bf8875-02  /ro               ext4    ro,noatime  0       1' /etc/fstab
+sed -i '$ i mount -o ro /dev/mmcblk0p2 /ro' /etc/rc.local
 echo overlay >>/etc/initramfs-tools/modules
 cd /root/www
 cp overlay /etc/initramfs-tools/scripts
