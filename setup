@@ -66,6 +66,7 @@ sed -i '$ a kernel=kernel7.img' /boot/config.txt
 sed -i '$ a initramfs initrd.img' /boot/config.txt
 sed -i 's/^/boot=overlay /' /boot/cmdline.txt
 
+echo 
 echo "##############################################"
 echo REBOOT
 echo "##############################################"
