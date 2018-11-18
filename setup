@@ -62,7 +62,6 @@ cd /root/www
 cp overlay /etc/initramfs-tools/scripts
 update-initramfs -c -k $(uname -r)
 mv /boot/initrd.img-$(uname -r) /boot/initrd.img
-sed -i '$ a kernel=kernel7.img' /boot/config.txt
 sed -i '$ a initramfs initrd.img' /boot/config.txt
 sed -i 's/^/boot=overlay /' /boot/cmdline.txt
 
