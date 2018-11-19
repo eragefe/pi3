@@ -67,7 +67,7 @@ sed -i 's/^/boot=overlay /' /boot/cmdline.txt
 
 echo 
 echo "##############################################"
-echo REBOOT
+echo                      REBOOT
 echo "##############################################"
 sleep 2
 
