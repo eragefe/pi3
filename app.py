@@ -31,6 +31,7 @@ def tidal_save_credentials():
     wifi_key = request.form['wifi_key']
 
     create_upmpdcli(ssid, wifi_key)
+    os.system('mv upmpdcli.tmp /ro/etc/upmpdcli.conf')
     time.sleep(1)
     os.system('reboot')
 
@@ -38,8 +39,8 @@ def tidal_save_credentials():
 def save_credentials():
     ssid = request.form['ssid']
     wifi_key = request.form['wifi_key']
-
     create_wpa_supplicant(ssid, wifi_key)
+    os.system('mv wpa_supplicant.conf.tmp /ro/etc/wpa_supplicant/wpa_supplicant.conf')
     time.sleep(1)
     os.system('reboot')
 
@@ -115,7 +116,6 @@ def create_wpa_supplicant(ssid, wifi_key):
     temp_conf_file.write('	}')
     temp_conf_file.close
     os.system('mount -o remount rw /ro')
-    os.system('mv wpa_supplicant.conf.tmp /ro/etc/wpa_supplicant/wpa_supplicant.conf')
 
 def create_upmpdcli(ssid, wifi_key):
 
@@ -130,7 +130,6 @@ def create_upmpdcli(ssid, wifi_key):
     temp_conf_file.write('tidalquality = lossless\n')
     temp_conf_file.close
     os.system('mount -o remount rw /ro')
-    os.system('mv upmpdcli.tmp /ro/etc/upmpdcli.conf')
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', port = 80)
