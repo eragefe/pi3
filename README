@@ -1,4 +1,4 @@
-# overlayroot
+# Create GDis DAC with read only fs
 
 cd /root
 apt-get install git -y
