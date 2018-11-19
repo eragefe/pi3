@@ -1,0 +1,8 @@
+# overlayroot
+
+cd /root
+apt-get install git -y
+git clone https://github.com/eragefe/overlayroot
+mv overlayroot www
+cd www
+bash setup
