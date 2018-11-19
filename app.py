@@ -29,7 +29,6 @@ def tidal():
 def tidal_save_credentials():
     ssid = request.form['ssid']
     wifi_key = request.form['wifi_key']
-
     create_upmpdcli(ssid, wifi_key)
     os.system('mv upmpdcli.tmp /ro/etc/upmpdcli.conf')
     time.sleep(1)
@@ -108,7 +107,6 @@ def create_wpa_supplicant(ssid, wifi_key):
     temp_conf_file.write('\n')
     temp_conf_file.write('network={\n')
     temp_conf_file.write('	ssid="' + ssid + '"\n')
-
     if wifi_key == '':
         temp_conf_file.write('	key_mgmt=NONE\n')
     else:
@@ -120,7 +118,6 @@ def create_wpa_supplicant(ssid, wifi_key):
 def create_upmpdcli(ssid, wifi_key):
 
     temp_conf_file = open('upmpdcli.tmp', 'w')
-
 
     temp_conf_file.write('uprclautostart = 1\n')
     temp_conf_file.write('friendlyname = GDis-NP\n')
