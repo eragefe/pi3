@@ -58,6 +58,8 @@ python setup.py install
 
 cd /root
 git clone https://github.com/eragefe/oled.git
+cp /root/oled/oled.service /etc/systemd/system
+systemctl enable oled
 
 echo
 echo "---Insalling overlayroot---"
