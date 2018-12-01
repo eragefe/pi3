@@ -59,6 +59,10 @@ python setup.py install
 cd /root
 git clone https://github.com/eragefe/oled.git
 
+echo
+echo "---Insalling overlayroot---"
+sleep 3
+
 mkdir /ro
 sed -i '$ i mount -o ro /dev/mmcblk0p2 /ro' /etc/rc.local
 echo overlay >>/etc/initramfs-tools/modules
