@@ -46,18 +46,18 @@ echo
 echo "---Installing OLED---"
 sleep 3
 
-cd /home/pi
+cd /root
 git clone https://github.com/adafruit/Adafruit_Python_GPIO.git
 cd Adafruit_Python_GPIO
 python setup.py install
 
-cd /home/pi
+cd /root
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
 python setup.py install
 
-cd /home/pi
-git clone https://github.com/naisema/MoodeAudio-OLED.git
+cd /root
+git clone https://github.com/eragefe/oled.git
 
 mkdir /ro
 sed -i '$ i mount -o ro /dev/mmcblk0p2 /ro' /etc/rc.local
