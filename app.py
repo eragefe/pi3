@@ -45,12 +45,13 @@ def save_credentials():
 
 @app.route('/dispon', methods = ['GET', 'POST'])
 def dispon():
-    os.system('mpd_oled -o 6 -b 21 -g 1 -f 15 -R &')
+    os.system('systemctl start oled')
     return render_template('app.html')
 
 @app.route('/dispoff', methods = ['GET', 'POST'])
 def dispoff():
-    os.system('killall mpd_oled')
+    os.system('systemctl stop oled')
+    os.system(python /root/oled/off.py)
     return render_template('app.html')
 
 @app.route('/reboot', methods = ['GET', 'POST'])
