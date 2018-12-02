@@ -11,7 +11,7 @@ apt-get install dirmngr -y
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
-apt-get install python3 python3-pip python3-setuptools mpd mpc upmpdcli upmpdcli-tidal squeezelite git-core autoconf make libtool libfftw3-dev libasound2-dev build-essential git-core autoconf make libtool libi2c-dev i2c-tools lm-sensors libcurl4-openssl-dev libmpdclient-dev libjsoncpp-dev python-pip python-dev python-smbus python-imaging python-mpd -y --allow-unauthenticated -y --allow-unauthenticated
+apt-get install python3 python3-pip python3-setuptools mpd mpc upmpdcli upmpdcli-tidal squeezelite minidlna git-core autoconf make libtool libfftw3-dev libasound2-dev build-essential git-core autoconf make libtool libi2c-dev i2c-tools lm-sensors libcurl4-openssl-dev libmpdclient-dev libjsoncpp-dev python-pip python-dev python-smbus python-imaging python-mpd -y --allow-unauthenticated -y --allow-unauthenticated
 cp mpd.conf /etc/mpd.conf
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
