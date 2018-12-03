@@ -21,7 +21,7 @@ cp squeezelite /etc/default/squeezelite
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
-systemctl enable minidlna
+update-rc.d minidlna defaults
 
 sed -i '/dtparam=audio=on/d' /boot/config.txt
 sed -i '$ i dtoverlay=gdis' /boot/config.txt
