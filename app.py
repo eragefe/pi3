@@ -69,8 +69,8 @@ def squeeze():
     os.system('mount -o remount rw /ro')
     os.system('cp /ro/etc/squeezelite /ro/etc/init.d')
     os.system('squeezelite -n GDis_squeeze -o hw:0 -z')
-    os.system('cp /ro/root/www/templates/app_sq.html /ro/root/www/templates/app.html')
-    os.system('cp /root/www/templates/app_sq.html /root/www/templates/app.html')
+    os.system('cp /ro/root/overlayroot/templates/app_sq.html /ro/root/overlayroot/templates/app.html')
+    os.system('cp /root/overlayroot/templates/app_sq.html /root/overlayroot/templates/app.html')
     os.system('mount -o remount ro /ro')
     return render_template('app.html')
 
@@ -79,8 +79,8 @@ def upnp():
     os.system('mount -o remount rw /ro')
     os.system('killall squeezelite')
     os.system('rm /ro/etc/init.d/squeezelite')
-    os.system('cp /ro/root/www/templates/app_up.html /ro/root/www/templates/app.html')
-    os.system('cp /root/www/templates/app_up.html /root/www/templates/app.html')
+    os.system('cp /ro/root/overlayroot/templates/app_up.html /ro/root/overlayroot/templates/app.html')
+    os.system('cp /root/overlayroot/templates/app_up.html /root/overlayroot/templates/app.html')
     os.system('mount -o remount ro /ro')
     return render_template('app.html')
 
