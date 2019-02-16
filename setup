@@ -32,7 +32,8 @@ sed -i '$ i dtparam=pwr_led_activelow=off' /boot/config.txt
 sed -i '$ i dtoverlay=pi3-act-led' /boot/config.txt
 sed -i '$ i dtparam=act-led-trigger=none' /boot/config.txt
 sed -i '$ i i2c-dev' /etc/modules
-sed -i '$ i python3 /root/pi3/app.py &' /etc/rc.local
+sed -i '$ i python /root/pi3/app.py &' /etc/rc.local
+sed -i '$ i python /root/pi3/oled/oled.py &' /etc/rc.local
 sed -i '$ i bash /root/mountusb &' /etc/rc.local
 sed -i '$ i sleep 9' /etc/rc.local
 sed -i '$ i echo "4" > /sys/class/gpio/export' /etc/rc.local
@@ -54,20 +55,7 @@ echo
 echo "---Installing OLED---"
 sleep 3
 
-cd /root
-git clone https://github.com/adafruit/Adafruit_Python_GPIO.git
-cd Adafruit_Python_GPIO
-python setup.py install
-
-cd /root
-git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
-cd Adafruit_Python_SSD1306
-python setup.py install
-
-cd /root
-git clone https://github.com/eragefe/oled.git
-cp /root/oled/oled.service /etc/systemd/system
-systemctl enable oled
+pip install --upgrade luma.oled
 
 echo
 echo "---Insalling overlayroot---"
