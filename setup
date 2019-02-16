@@ -76,7 +76,7 @@ sleep 3
 mkdir /ro
 sed -i '$ i mount -o ro /dev/mmcblk0p2 /ro' /etc/rc.local
 echo overlay > /etc/initramfs-tools/modules
-cd /root/overlayroot
+cd /root/pi3
 cp overlay /etc/initramfs-tools/scripts
 update-initramfs -c -k $(uname -r)
 mv /boot/initrd.img-$(uname -r) /boot/initrd.img
