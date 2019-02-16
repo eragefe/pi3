@@ -3,5 +3,5 @@
 cd /root
 apt-get install git -y
 git clone https://github.com/eragefe/pi3
-cd overlayroot
+cd pi3
 bash setup
