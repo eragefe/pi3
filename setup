@@ -16,6 +16,7 @@ cp mpd.conf /etc/mpd.conf
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
+cp shairport-sync.conf /etc/shairport-sync.conf
 mv /etc/init.d/squeezelite /etc/squeezelite
 cp squeezelite /etc/default/squeezelite
 dphys-swapfile swapoff
