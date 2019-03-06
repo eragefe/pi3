@@ -113,54 +113,41 @@ def main():
     title = info['title']
     audio = info['audio_info']
 
-    if '1' in open('/sys/class/gpio/gpio198/value').read():
-      if '0' in open('/sys/class/gpio/gpio199/value').read():
-        with canvas(device) as draw:
-             draw.text((15,15),"Optical 1", font=font3, fill=255)
+    if (state == 'stop'):
+      with canvas(device) as draw:
 
-    if '1' in open('/sys/class/gpio/gpio198/value').read():
-      if '1' in open('/sys/class/gpio/gpio199/value').read():
-        with canvas(device) as draw:
-             draw.text((15,15),"Optical 2", font=font3, fill=255)
+       if vol>0 and vol<100:
+         draw.text((0,13),str(vol), font=font, fill=255)
+       if vol==100:
+         draw.text((0,13),"--", font=font, fill=255)
 
-    if '0' in open('/sys/class/gpio/gpio198/value').read():
-      if '0' in open('/sys/class/gpio/gpio199/value').read():
+    if state == 'play':
+      with canvas(device) as draw:
+       if vol>0 and vol<100:
 
-        if (state == 'stop'):
-          with canvas(device) as draw:
+         draw.text((35,0), audio, font=font2, fill=255)
+         draw.text((0,13),str(vol), font=font, fill=255)
+         draw.text((80,50),str(eltime), font=font2, fill=255)
+         draw.text((87,20),">>", font=font4, fill=255)
+       if vol==100:
+         draw.text((35,0), audio, font=font2, fill=255)
+         draw.text((0,13),"--", font=font, fill=255)
+         draw.text((80,50),str(eltime), font=font2, fill=255)
+         draw.text((87,20),">>", font=font4, fill=255)
 
-           if vol>0 and vol<100:
-             draw.text((0,13),str(vol), font=font, fill=255)
-           if vol==100:
-             draw.text((0,13),"--", font=font, fill=255)
+    if state == 'pause':
+      with canvas(device) as draw:
+       if vol>0 and vol<100:
 
-        if state == 'play':
-          with canvas(device) as draw:
-
-           if vol>0 and vol<100:
-             draw.text((35,0), audio, font=font2, fill=255)
-             draw.text((0,13),str(vol), font=font, fill=255)
-             draw.text((80,50),str(eltime), font=font2, fill=255)
-             draw.text((87,20),">>", font=font4, fill=255)
-           if vol==100:
-             draw.text((35,0), audio, font=font2, fill=255)
-             draw.text((0,13),"--", font=font, fill=255)
-             draw.text((80,50),str(eltime), font=font2, fill=255)
-             draw.text((87,20),">>", font=font4, fill=255)
-
-        if state == 'pause':
-          with canvas(device) as draw:
-           if vol>0 and vol<100:
-
-             draw.text((35,0), audio, font=font2, fill=255)
-             draw.text((0,13),str(vol), font=font, fill=255)
-             draw.text((80,50),str(eltime), font=font2, fill=255)
-             draw.text((87,20)," ||", font=font4, fill=255)
-           if vol==100:
-             draw.text((35,0), audio, font=font2, fill=255)
-             draw.text((0,13),"--", font=font, fill=255)
-             draw.text((80,50),str(eltime), font=font2, fill=255)
-             draw.text((87,20)," ||", font=font4, fill=255)
+         draw.text((35,0), audio, font=font2, fill=255)
+         draw.text((0,13),str(vol), font=font, fill=255)
+         draw.text((80,50),str(eltime), font=font2, fill=255)
+         draw.text((87,20)," ||", font=font4, fill=255)
+       if vol==100:
+         draw.text((35,0), audio, font=font2, fill=255)
+         draw.text((0,13),"--", font=font, fill=255)
+         draw.text((80,50),str(eltime), font=font2, fill=255)
+         draw.text((87,20)," ||", font=font4, fill=255)
 
 if __name__ == "__main__":
     try:
