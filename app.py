@@ -51,7 +51,7 @@ def dispon():
 @app.route('/dispoff', methods = ['GET', 'POST'])
 def dispoff():
     os.system('systemctl stop oled')
-    os.system('python /root/oled/off.py')
+    os.system('python /root/pi3/oled/off.py')
     return render_template('app.html')
 
 @app.route('/reboot', methods = ['GET', 'POST'])
