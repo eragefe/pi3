@@ -23,6 +23,9 @@ dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
 update-rc.d minidlna defaults
+cp oled2.service /etc/systemd/system
+cp oled.service /etc/systemd/system
+systemctl enable oled
 
 sed -i '/dtparam=audio=on/d' /boot/config.txt
 sed -i '$ i dtoverlay=gdis' /boot/config.txt
