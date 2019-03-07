@@ -45,7 +45,7 @@ def save_credentials():
 
 @app.route('/dispon', methods = ['GET', 'POST'])
 def dispon():
-    os.system('python /root/pi3/oled/oled2.py')
+    os.system('python /root/pi3/oled/oled2.py &')
     return render_template('app.html')
 
 @app.route('/dispoff', methods = ['GET', 'POST'])
