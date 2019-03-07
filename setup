@@ -37,7 +37,6 @@ sed -i '$ i dtoverlay=pi3-act-led' /boot/config.txt
 sed -i '$ i dtparam=act-led-trigger=none' /boot/config.txt
 sed -i '$ i i2c-dev' /etc/modules
 sed -i '$ i python /root/pi3/app.py &' /etc/rc.local
-sed -i '$ i python /root/pi3/oled/oled.py &' /etc/rc.local
 sed -i '$ i bash /root/mountusb &' /etc/rc.local
 sed -i '$ i sleep 9' /etc/rc.local
 sed -i '$ i echo "4" > /sys/class/gpio/export' /etc/rc.local
