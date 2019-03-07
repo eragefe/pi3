@@ -1,5 +1,5 @@
 [Unit]
-Description=MoOde Audio OLED Display
+Description=Audio OLED Display
 After=multi-user.target
 
 [Service]
