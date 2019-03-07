@@ -45,11 +45,13 @@ def save_credentials():
 
 @app.route('/dispon', methods = ['GET', 'POST'])
 def dispon():
-    os.system('python /root/pi3/oled/oled2.py &')
+    os.system('systemctl start oled2')
     return render_template('app.html')
 
 @app.route('/dispoff', methods = ['GET', 'POST'])
 def dispoff():
+    os.system('systemctl stop oled')
+    os.system('systemctl stop oled2')
     os.system('python /root/pi3/oled/off.py')
     return render_template('app.html')
 
