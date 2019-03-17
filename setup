@@ -16,6 +16,8 @@ cp mpd.conf /etc/mpd.conf
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
+cp asound.conf /etc/asound.conf
+cp speech.wav /root/speech.wav
 cp shairport-sync.conf /etc/shairport-sync.conf
 mv /etc/init.d/squeezelite /etc/squeezelite
 cp squeezelite /etc/default/squeezelite
@@ -42,6 +44,11 @@ sed -i '$ i sleep 9' /etc/rc.local
 sed -i '$ i echo "4" > /sys/class/gpio/export' /etc/rc.local
 sed -i '$ i echo "out" > /sys/class/gpio/gpio4/direction' /etc/rc.local
 sed -i '$ i mpc volume 50' /etc/rc.local
+sed -i '$ i aplay -D default -t raw -r 44100 -c 2 -f S16_LE /dev/zero &' /etc/rc.local
+sed -i '$ i sleep 1' /etc/rc.local
+sed -i '$ i killall -9 aplay' /etc/rc.local
+sed -i '$ i amixer set Master 50%' /etc/rc.local
+sed -i '$ i aplay /root/speech.wav' /etc/rc.local
 
 echo
 echo "---Insalling roon---"
