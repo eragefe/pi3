@@ -49,6 +49,7 @@ sed -i '$ i sleep 1' /etc/rc.local
 sed -i '$ i killall -9 aplay' /etc/rc.local
 sed -i '$ i amixer set Master 50%' /etc/rc.local
 sed -i '$ i aplay /root/speech.wav' /etc/rc.local
+sed -i '$ i amixer set Master 100%' /etc/rc.local
 
 echo
 echo "---Insalling roon---"
