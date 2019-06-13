@@ -27,7 +27,7 @@
 		__overlay__ {
 			compatible = "simple-audio-card";
 			simple-audio-card,name = "G-Dis-DAC";
-			simple-audio-card,format = "right_j";
+			simple-audio-card,format = "i2s";
 			simple-audio-card,bitclock-master = <&codec_dai>;
 			simple-audio-card,frame-master = <&codec_dai>;
 			status="okay";
