@@ -15,6 +15,7 @@ apt-get install lirc mplayer python-pip python-setuptools mpd mpc upmpdcli upmpd
 cp mpd.conf /etc/mpd.conf
 cp lircrc /etc/lirc
 cp gdis.lircd.conf /etc/lirc/lircd.conf.d
+cp hardware.conf /etc/lirc
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
