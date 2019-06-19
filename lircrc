@@ -1,19 +1,19 @@
     begin
         prog   = irexec
         button = KEY_VOLUMEUP
-        config = python /root/up.py
+        config = python /root/pi3/up.py
         repeat = 1
     end
 
     begin
         prog   = irexec
         button = KEY_VOLUMEDOWN
-        config = python /root/down.py
+        config = python /root/pi3/down.py
     end
 
     begin
         prog   = irexec
         button = KEY_ENTER
-        config = python /root/input.py
+        config = python /root/pi3/input.py
     end
 
