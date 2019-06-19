@@ -1,0 +1,19 @@
+    begin
+        prog   = irexec
+        button = KEY_VOLUMEUP
+        config = python /root/up.py
+        repeat = 1
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_VOLUMEDOWN
+        config = python /root/down.py
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_ENTER
+        config = python /root/input.py
+    end
+
