@@ -43,9 +43,6 @@ sed -i '$ i dtoverlay=lirc-rpi,gpio_in_pin=4' /boot/config.txt
 sed -i '$ i i2c-dev' /etc/modules
 sed -i '$ i python /root/pi3/app.py &' /etc/rc.local
 sed -i '$ i bash /root/mountusb &' /etc/rc.local
-sed -i '$ i sleep 9' /etc/rc.local
-sed -i '$ i echo "4" > /sys/class/gpio/export' /etc/rc.local
-sed -i '$ i echo "out" > /sys/class/gpio/gpio4/direction' /etc/rc.local
 sed -i '$ i mpc volume 50' /etc/rc.local
 sed -i '$ i mplayer /root/speech.wav -af volume=-20' /etc/rc.local
 sed -i '$ i irexec &' /etc/rc.local
