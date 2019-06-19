@@ -11,8 +11,10 @@ apt-get install dirmngr -y
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
-apt-get install mplayer python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
+apt-get install lirc mplayer python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
 cp mpd.conf /etc/mpd.conf
+cp lircrc /etc/lirc
+cp gdis.lircd.conf /etc/lirc/lircd.conf.d
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
