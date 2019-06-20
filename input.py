@@ -13,7 +13,7 @@ if state6==1:
    GPIO.output(6, GPIO.LOW)
    GPIO.output(13, GPIO.LOW)
    file = open("/boot/input","w")
-   file.write("coax")
+   file.write("opt")
    file.close()
 
 if state6==0:
@@ -27,5 +27,5 @@ if state13:
    GPIO.output(6, GPIO.HIGH)
    GPIO.output(13, GPIO.LOW)
    file = open("/boot/input","w")
-   file.write("opt")
+   file.write("coax")
    file.close()
