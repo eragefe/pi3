@@ -14,6 +14,7 @@ apt-get update
 apt-get install lirc mplayer python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
 cp mpd.conf /etc/mpd.conf
 cp lircrc /etc/lirc
+cp input /boot
 cp gdis.lircd.conf /etc/lirc/lircd.conf.d
 cp lirc_options.conf /etc/lirc
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
