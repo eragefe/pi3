@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(17,GPIO.OUT)
-GPIO.output(17,GPIO.HIGH)
+GPIO.setup(5,GPIO.OUT)
+GPIO.output(5,GPIO.HIGH)
 time.sleep(0.3)
-GPIO.output(17,GPIO.LOW)
+GPIO.output(5,GPIO.LOW)
