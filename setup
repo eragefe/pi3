@@ -20,7 +20,7 @@ cp lirc_options.conf /etc/lirc
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
-cp speech.wav /root/speech.wav
+cp speech.wav streamer.wav coaxial.wav optical.wav /root
 cp shairport-sync.conf /etc/shairport-sync.conf
 mv /etc/init.d/squeezelite /etc/squeezelite
 cp squeezelite /etc/default/squeezelite
