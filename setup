@@ -11,7 +11,7 @@ apt-get install dirmngr -y
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
-apt-get install lirc mplayer python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
+apt-get install lirc python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
 cp mpd.conf /etc/mpd.conf
 cp lircrc /etc/lirc
 cp input /boot
@@ -20,7 +20,7 @@ cp lirc_options.conf /etc/lirc
 mv /etc/upmpdcli.conf /etc/upmpdcli.conf.orig
 cp upmpdcli.conf /etc/upmpdcli.conf
 cp minidlna.conf /etc/minidlna.conf
-cp speech.wav streamer.wav coaxial.wav optical.wav /root
+cp ready.wav streamer.wav coaxial.wav optical.wav /root
 cp shairport-sync.conf /etc/shairport-sync.conf
 mv /etc/init.d/squeezelite /etc/squeezelite
 cp squeezelite /etc/default/squeezelite
@@ -45,7 +45,7 @@ sed -i '$ i i2c-dev' /etc/modules
 sed -i '$ i python /root/pi3/app.py &' /etc/rc.local
 sed -i '$ i bash /root/mountusb &' /etc/rc.local
 sed -i '$ i mpc volume 50' /etc/rc.local
-sed -i '$ i mplayer /root/speech.wav -af volume=-20' /etc/rc.local
+sed -i '$ i aplay /root/ready.wav' /etc/rc.local
 sed -i '$ i irexec &' /etc/rc.local
 sed -i '$ i python /root/pi3/default.py' /etc/rc.local
 
