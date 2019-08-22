@@ -9,6 +9,7 @@
         prog   = irexec
         button = KEY_VOLUMEDOWN
         config = python /root/pi3/down.py
+        repeat = 1
     end
 
     begin
