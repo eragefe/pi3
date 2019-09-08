@@ -9,16 +9,16 @@ with open("/boot/input") as file:
    contents = file.read()
    if "streamer" in contents:
       GPIO.output(13, GPIO.HIGH)
-      GPIO.output(6, GPIO.LOW)
+      GPIO.output(26, GPIO.LOW)
 
 with open("/boot/input") as file:
    contents = file.read()
    if "coax" in contents:
       GPIO.output(13, GPIO.LOW)
-      GPIO.output(6, GPIO.HIGH)
+      GPIO.output(26, GPIO.LOW)
 
 with open("/boot/input") as file:
    contents = file.read()
    if "opt" in contents:
-      GPIO.output(6, GPIO.LOW)
+      GPIO.output(26, GPIO.HIGH)
       GPIO.output(13, GPIO.LOW)
