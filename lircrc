@@ -14,7 +14,36 @@
 
     begin
         prog   = irexec
-        button = KEY_ENTER
+        button = KEY_MENU
         config = python /root/pi3/input.py
     end
 
+    begin
+        prog   = irexec
+        button = KEY_ENTER
+        config = mpc toggle
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_UP
+        config = mpc next
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_DOWN
+        config = mpc prev
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_MUTE
+        config = mpc stop
+    end
+
+    begin
+        prog   = irexec
+        button = KEY_RIGHT
+        config = mpc play
+    end
