@@ -8,7 +8,7 @@
 		target = <&i2s>;
 		__overlay__ {
 			status = "okay";
-        	};
+                };
 	};
 
 	fragment@1 {
