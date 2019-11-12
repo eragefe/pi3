@@ -1,4 +1,4 @@
-# Create GDis DAC with read only fs (Right justified I2S)
+# Create GDis DAC with read only fs
 
 cd /root
 apt-get install git -y
