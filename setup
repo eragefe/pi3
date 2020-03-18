@@ -11,7 +11,7 @@ apt-get install dirmngr -y
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
-apt-get install initramfs-tools initramfs-tools-core lirc python-pip python-setuptools mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask python-wheel libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
+apt-get install initramfs-tools initramfs-tools-core lirc python-pip mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
 cp mpd.conf /etc/mpd.conf
 cp lircrc /etc/lirc
 cp input /boot
@@ -65,6 +65,7 @@ echo
 echo "---Installing OLED---"
 sleep 3
 
+pip install --upgrade setuptools wheel
 pip install --upgrade luma.oled
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
