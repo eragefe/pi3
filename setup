@@ -8,7 +8,8 @@ cp umountusb /root
 
 apt-get update
 apt-get install dirmngr -y
-apt-key adv --keyserver pool.sks-keyservers.net --recv-keys F8E3347256922A8AE767605B7808CE96D38B9201
+gpg --keyserver pool.sks-keyservers.net --recv-key F8E3347256922A8AE767605B7808CE96D38B9201
+gpg --export '7808CE96D38B9201' | sudo apt-key add -
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
 apt-get install initramfs-tools initramfs-tools-core lirc python-pip mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
