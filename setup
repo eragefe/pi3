@@ -7,7 +7,6 @@ cp mountusb /root
 cp umountusb /root
 
 apt-get update
-apt-get install dirmngr -y
 gpg --keyserver pool.sks-keyservers.net --recv-key F8E3347256922A8AE767605B7808CE96D38B9201
 gpg --export '7808CE96D38B9201' | apt-key add -
 cp upmpdcli.list /etc/apt/sources.list.d
