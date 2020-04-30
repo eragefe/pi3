@@ -68,7 +68,7 @@ echo "---Installing OLED---"
 sleep 3
 
 python3 -m pip install --upgrade setuptools wheel
-pip install --upgrade luma.oled
+pip3 install --upgrade luma.oled
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
 echo
