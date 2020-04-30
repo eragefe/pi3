@@ -12,7 +12,7 @@ gpg --export '7808CE96D38B9201' | sudo apt-key add -
 cp upmpdcli.list /etc/apt/sources.list.d
 apt-get update
 
-apt-get install initramfs-tools initramfs-tools-core lirc python-pip mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
+apt-get install initramfs-tools initramfs-tools-core lirc python3-pip mpd mpc upmpdcli upmpdcli-tidal shairport-sync squeezelite minidlna i2c-tools python-dev python-smbus python-mpd python-flask libfreetype6-dev libjpeg-dev build-essential -y --allow-unauthenticated
 
 cp mpd.conf /etc/mpd.conf
 cp lircrc /etc/lirc
@@ -67,7 +67,7 @@ echo
 echo "---Installing OLED---"
 sleep 3
 
-python -m pip install --upgrade pip setuptools wheel
+python3 -m pip install --upgrade setuptools wheel
 pip install --upgrade luma.oled
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
