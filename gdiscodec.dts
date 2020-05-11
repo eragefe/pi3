@@ -19,7 +19,7 @@
                 r_cpu_dai: cpu {
                     sound-dai = <&i2s>;
                     dai-tdm-slot-num = <2>;
-                    dai-tdm-slot-width = <64>;
+                    dai-tdm-slot-width = <128>;
                 };
 
                 r_codec_dai: codec {
@@ -35,7 +35,7 @@
                 p_cpu_dai: cpu {
                     sound-dai = <&i2s>;
                     dai-tdm-slot-num = <2>;
-                    dai-tdm-slot-width = <32>;
+                    dai-tdm-slot-width = <128>;
                 };
 
                 p_codec_dai: codec {
