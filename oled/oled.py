@@ -53,11 +53,12 @@ class MPDConnect(object):
         self._mpd_client.previous()
         #return False
 
-        def spdif(self):
+    def spdif(self):
         self._mpd_client.clear()
         os.system("aplay /root/spdif176400.wav")
         self._mpd_client.add("alsa://hw:0,1")
-        self._mpd_client.play()        
+        self._mpd_client.play()
+        #return False
 
     def fetch(self):
         song_info = self._mpd_client.currentsong()
