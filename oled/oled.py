@@ -53,6 +53,12 @@ class MPDConnect(object):
         self._mpd_client.previous()
         #return False
 
+        def spdif(self):
+        self._mpd_client.clear()
+        os.system("aplay /root/spdif176400.wav")
+        self._mpd_client.add("alsa://hw:0,1")
+        self._mpd_client.play()        
+
     def fetch(self):
         song_info = self._mpd_client.currentsong()
 
@@ -120,6 +126,7 @@ time.sleep(8)
 def main():
   client = MPDConnect()
   client.connect()
+  client.spdif()
 
   while True:
 
@@ -154,6 +161,7 @@ def main():
          draw.text((87,20),">>", font=font4, fill=255)
 
     if state == 'pause':
+      client.spdif()
       with canvas(device) as draw:
        if vol>0 and vol<100:
 
